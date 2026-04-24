@@ -1,0 +1,347 @@
+/* NOIR ELEGANCE - DESIGN SYSTEM */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent: #ffffff;
+  --border-color: #333333;
+  --card-bg: #111111;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* APP CONTAINER */
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 80px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 40px;
+}
+
+header h1 {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+header h1 span {
+  font-weight: 900;
+  font-style: italic;
+}
+
+header p {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+/* GRID LAYOUT */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 60px;
+}
+
+@media (max-width: 1024px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARDS & SECTIONS */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  transition: var(--transition);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+}
+
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-header svg {
+  display: none; /* Minimalist: hide header icons in B&W theme */
+}
+
+/* FORMS */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+/* CHECKBOX */
+.checkbox-group {
+  margin-top: 20px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.checkmark {
+  height: 18px;
+  width: 18px;
+  border: 1px solid var(--border-color);
+  margin-right: 12px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* BUTTONS */
+#bookFormSubmit {
+  width: 100%;
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#bookFormSubmit:hover {
+  background: var(--accent);
+  color: black;
+}
+
+#bookFormSubmit svg {
+  display: none;
+}
+
+/* SEARCH */
+.search-input-wrapper {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.search-input-wrapper input {
+  border-bottom: none;
+}
+
+#searchSubmit {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0 12px;
+  transition: var(--transition);
+}
+
+#searchSubmit:hover {
+  color: #fff;
+}
+
+/* BOOK LISTS */
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.status-indicator {
+  display: none; /* Hide for extreme minimalism */
+}
+
+/* BOOK ITEM */
+.book-item {
+  border: 1px solid var(--border-color);
+  padding: 32px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.book-item:hover {
+  border-color: var(--accent);
+  background: #161616;
+}
+
+.book-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.book-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+.book-item .book-year {
+  display: inline-block;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  margin-top: 8px;
+  color: var(--text-secondary);
+}
+
+/* ACTIONS */
+.book-action {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.book-action button {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.book-action button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.book-action button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.book-action button[data-testid="bookItemDeleteButton"]:hover {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 100px;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 40px;
+}
+
+footer p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card, .book-item {
+  animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
