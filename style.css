@@ -345,3 +345,67 @@ footer p {
 .card, .book-item {
   animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 40px 16px;
+  }
+
+  header {
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.2rem; /* Smaller header for mobile */
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .grid-layout {
+    gap: 40px;
+  }
+
+  .card {
+    padding: 24px; /* Less padding on mobile */
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .book-item {
+    padding: 20px;
+  }
+
+  .book-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .book-action {
+    flex-direction: column; /* Stack buttons on mobile */
+    gap: 8px;
+  }
+
+  .book-action button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #bookFormSubmit {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-header {
+    padding-left: 10px;
+  }
+}
